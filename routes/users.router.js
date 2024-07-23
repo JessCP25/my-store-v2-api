@@ -21,7 +21,9 @@ router.get('/:id',
   async (req, res, next) => {
     try {
       const { id } = req.params;
-      const category = await service.findOne(id);
+      console.log(`Received id: ${id}`); // Agregar log para verificar el valor de id
+
+      const category = await service.findOne(parseInt(id, 10));
       res.json(category);
     } catch (error) {
       next(error);
