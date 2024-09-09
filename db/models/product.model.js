@@ -1,13 +1,13 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 const { CATEGORY_TABLE } = require('./category.model');
 
-const PRODUCT_TABLE = 'categories';
+const PRODUCT_TABLE = 'products';
 
 const ProductSchema = {
   id: {
     allowNull: false,
     autoIncrement: true,
-    priamryKey: true,
+    primaryKey: true,
     type: DataTypes.INTEGER
   },
   name: {
@@ -32,7 +32,7 @@ const ProductSchema = {
     field: 'created_at',
     defaultValue: Sequelize.NOW,
   },
-  userId: {
+  categoryId: {
     field: 'category_id',
     allowNull: true,
     type: DataTypes.INTEGER,
